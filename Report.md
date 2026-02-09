@@ -108,6 +108,7 @@ public static void main(String[] args) {
     // Grammar initialization, string generation,
     // conversion to finite automaton and validation
 }
+```
 
 ## Conclusions / Results
 
