@@ -1,7 +1,7 @@
 # Laboratory Work №4: Regular Expressions
 **Course:** Formal Languages & Finite Automata  
 **Author:** Nedelea Dragoș 
-**Variant:** 4
+**Variant:** 2
 **Professor:** Cretu Dumitru
 
 ---
@@ -39,13 +39,40 @@ The engine uses a **Recursive Descent** approach. As the string is parsed charac
 
 ## 4. Execution Results
 
-### Example Output for Variant 4:
+### Example Output for Variant 2:
 ```text
-Processing Regex: (S|T)(U|V)w*y+24
-[GROUP       ] Expression: '(S|T)'     -> Produced: 'S'
-[GROUP       ] Expression: '(U|V)'     -> Produced: 'V'
-[QUANTIFIER  ] Expression: 'w*'        -> Produced: 'www'
-[QUANTIFIER  ] Expression: 'y+'        -> Produced: 'yyyy'
-[LITERAL     ] Expression: '2'         -> Produced: '2'
-[LITERAL     ] Expression: '4'         -> Produced: '4'
-FINAL WORD: SVwwyyyy24
+Processing Regex: M?N^2(O|P)^3Q*R+
+Sequence of Processing:
+[QUANTIFIER  ] Expression: 'M?        ' -> Produced: ''
+[QUANTIFIER  ] Expression: 'N^2       ' -> Produced: 'NN'
+[LITERAL     ] Expression: 'O         ' -> Produced: 'O'
+[LITERAL     ] Expression: 'P         ' -> Produced: 'P'
+[LITERAL     ] Expression: 'O         ' -> Produced: 'O'
+[GROUP       ] Expression: '(O|P)^3   ' -> Produced: 'OPO'
+[QUANTIFIER  ] Expression: 'Q*        ' -> Produced: 'QQQ'
+[QUANTIFIER  ] Expression: 'R+        ' -> Produced: 'R'
+FINAL WORD: NNOPOQQQR
+------------------------------------------------------
+
+Processing Regex: (X|Y|Z)^3 8+(9|0)
+Sequence of Processing:
+[LITERAL     ] Expression: 'Y         ' -> Produced: 'Y'
+[LITERAL     ] Expression: 'X         ' -> Produced: 'X'
+[LITERAL     ] Expression: 'Z         ' -> Produced: 'Z'
+[GROUP       ] Expression: '(X|Y|Z)^3 ' -> Produced: 'YXZ'
+[QUANTIFIER  ] Expression: '8+        ' -> Produced: '88'
+[LITERAL     ] Expression: '0         ' -> Produced: '0'
+[GROUP       ] Expression: '(9|0)     ' -> Produced: '0'
+FINAL WORD: YXZ880
+------------------------------------------------------
+
+Processing Regex: (H|i)(J|K)L*N?
+Sequence of Processing:
+[LITERAL     ] Expression: 'H         ' -> Produced: 'H'
+[GROUP       ] Expression: '(H|i)     ' -> Produced: 'H'
+[LITERAL     ] Expression: 'J         ' -> Produced: 'J'
+[GROUP       ] Expression: '(J|K)     ' -> Produced: 'J'
+[QUANTIFIER  ] Expression: 'L*        ' -> Produced: 'LLLL'
+[QUANTIFIER  ] Expression: 'N?        ' -> Produced: 'N'
+FINAL WORD: HJLLLLN
+------------------------------------------------------

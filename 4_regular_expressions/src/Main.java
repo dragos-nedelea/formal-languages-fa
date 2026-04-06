@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        int studentVariant = 4; // Change to 1, 2, 3, or 4
+        int studentVariant = 2; // Change to 1, 2, 3, or 4
         String[] expressions = VariantManager.getVariant(studentVariant);
         RegexEngine engine = new RegexEngine();
 
